@@ -28,7 +28,7 @@ def wishMe():               #This will greet you accrding to time !
     else:
         speak("Good Evening!")  
 
-    speak("I am Luna Sir! Your virtual AI assistant. How may I help you sir?")       
+    speak("I am Luna! Your virtual AI assistant. How may I help you sir?")       
 
 def takeCommand():
     #It takes microphone input from the user and returns string output
