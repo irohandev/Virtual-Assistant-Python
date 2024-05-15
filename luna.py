@@ -9,7 +9,7 @@ import smtplib
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
 # print(voices[1].id)
-engine.setProperty('voice', voices[1].id)
+engine.setProperty('voice', voices[1].id)           #voices[1] - female voice; voice[0] - male voice
 
 
 def speak(audio):
@@ -17,7 +17,7 @@ def speak(audio):
     engine.runAndWait()
 
 
-def wishMe():
+def wishMe():               #This will greet you accrding to time !
     hour = int(datetime.datetime.now().hour)
     if hour>=0 and hour<12:
         speak("Good Morning!")
@@ -50,7 +50,7 @@ def takeCommand():
         return "None"
     return query
 
-def sendEmail(to, content):
+def sendEmail(to, content):         #This will send emails 
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.ehlo()
     server.starttls()
@@ -73,27 +73,27 @@ if __name__ == "__main__":
             print(results)
             speak(results)
 
-        elif 'open youtube' in query:
+        elif 'open youtube' in query:           #this opens Youtube
             webbrowser.open("youtube.com")
 
-        elif 'open google' in query:
+        elif 'open google' in query:            #this opens Google
             webbrowser.open("google.com")
 
-        elif 'open stackoverflow' in query:
+        elif 'open stackoverflow' in query:         #this opens stackoverflow website
             webbrowser.open("stackoverflow.com")   
 
 
-        # elif 'play music' in query:
+        # elif 'play music' in query:               #this will play musics from your local system 
         #     music_dir = 'ENTER YOUR MUSIC PATH HERE'
         #     songs = os.listdir(music_dir)
         #     print(songs)    
         #     os.startfile(os.path.join(music_dir, songs[0]))
 
-        elif 'the time' in query:
+        elif 'the time' in query:               #this will give you info about the time 
             strTime = datetime.datetime.now().strftime("%H:%M:%S")    
             speak(f"Sir, the time is {strTime}")
 
-        # elif 'open code' in query:
+        # elif 'open code' in query:            #this opens code from your selected local storage path
         #     codePath = "ENTER YOUR CODING PATH!"
         #     os.startfile(codePath)
 
